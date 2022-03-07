@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop/screens/product_detail_screen.dart';
 import 'package:shop/screens/products_overview_screen.dart';
+import 'package:shop/utils/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,11 +20,13 @@ class MyApp extends StatelessWidget {
         colorScheme: theme.colorScheme.copyWith(
           primary: Colors.purple,
           secondary: Colors.deepOrange,
-        )
+        ),
       ),
       debugShowCheckedModeBanner: false,
       home: ProductsOverviewScreen(),
+      routes: {
+        AppRoutes.PRODUCT_DETAIL: (context) => ProductDetailScreen(),
+      },
     );
   }
 }
-
