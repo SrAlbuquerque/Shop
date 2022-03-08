@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: ProductsOverviewScreen(),
+        home: const ProductsOverviewScreen(),
         routes: {
-          AppRoutes.PRODUCT_DETAIL: (context) => ProductDetailScreen(),
+          AppRoutes.PRODUCT_DETAIL: (context) => const ProductDetailScreen(),
         },
       ),
     );

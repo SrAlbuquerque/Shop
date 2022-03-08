@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop/screens/product_detail_screen.dart';
 import 'package:shop/utils/app_routes.dart';
 
 import '../models/product.dart';
@@ -33,7 +32,7 @@ class ProductItem extends StatelessWidget {
           backgroundColor: Colors.black54,
           leading: IconButton(
             onPressed: () {},
-            icon: Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite),
             color: Theme.of(context).colorScheme.secondary,
           ),
           title: Text(
@@ -42,7 +41,7 @@ class ProductItem extends StatelessWidget {
           ),
           trailing: IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             color: Theme.of(context).colorScheme.secondary,
           ),
         ),
