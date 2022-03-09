@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     final ThemeData theme = ThemeData();
 
     return ChangeNotifierProvider(
-      create: (_) => ProductList(), // retornar o ChangeNotifier
+      create: (_) => ProductList(), // cria e retornar o ChangeNotifier
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: theme.copyWith(

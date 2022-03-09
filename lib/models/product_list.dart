@@ -6,6 +6,8 @@ class ProductList with ChangeNotifier {
   final List<Product> _items = dummyProducts;
 
   List<Product> get items => [..._items]; //clone dos itens
+  List<Product> get favoriteItems =>
+      _items.where((prod) => prod.isFavorite).toList();
 
   void addProduct(Product product) {
     _items.add(product);
