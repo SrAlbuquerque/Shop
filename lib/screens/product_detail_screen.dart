@@ -11,7 +11,9 @@ class ProductDetailScreen extends StatelessWidget {
         as Product; //argumento que foi passado pela rota
     return Scaffold(
       appBar: AppBar(
-        title: Text(product.title),
+        title: Text(
+          product.name,
+        ),
       ),
     );
   }
