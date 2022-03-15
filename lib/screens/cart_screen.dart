@@ -40,7 +40,7 @@ class CartScreen extends StatelessWidget {
                   Chip(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     label: Text(
-                      'R\$${cart.totalAmount}',
+                      'R\$${cart.totalAmount.toStringAsFixed(2)}',
                       style: TextStyle(
                         color:
                             Theme.of(context).primaryTextTheme.headline6?.color,
@@ -52,7 +52,7 @@ class CartScreen extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       'Comprar',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 15),
                     ),
                     style: TextButton.styleFrom(
                       textStyle: TextStyle(
