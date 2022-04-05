@@ -28,18 +28,6 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       appBar: AppBar(
         title: const Text('Loja'),
         actions: [
-          Consumer<Cart>(
-            child: IconButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(AppRoutes.CART);
-              },
-              icon: const Icon(Icons.shopping_cart),
-            ),
-            builder: (context, cart, child) => Badge(
-              value: cart.itemsCount.toString(),
-              child: child!,
-            ),
-          ),
           PopupMenuButton(
             itemBuilder: (_) => [
               const PopupMenuItem(
@@ -60,6 +48,18 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                 }
               });
             },
+          ),
+          Consumer<Cart>(
+            child: IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.CART);
+              },
+              icon: const Icon(Icons.shopping_cart),
+            ),
+            builder: (context, cart, child) => Badge(
+              value: cart.itemsCount.toString(),
+              child: child!,
+            ),
           ),
         ],
       ),
