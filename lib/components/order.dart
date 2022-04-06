@@ -4,14 +4,13 @@ import 'package:shop/models/order.dart';
 
 class OrderWidget extends StatefulWidget {
   final Order order;
-
   const OrderWidget({
     Key? key,
     required this.order,
   }) : super(key: key);
 
   @override
-  State<OrderWidget> createState() => _OrderWidgetState();
+  _OrderWidgetState createState() => _OrderWidgetState();
 }
 
 class _OrderWidgetState extends State<OrderWidget> {
@@ -28,12 +27,12 @@ class _OrderWidgetState extends State<OrderWidget> {
               DateFormat('dd/MM/yyyy hh:mm').format(widget.order.date),
             ),
             trailing: IconButton(
+              icon: const Icon(Icons.expand_more),
               onPressed: () {
                 setState(() {
                   _expanded = !_expanded;
                 });
               },
-              icon: const Icon(Icons.expand_more),
             ),
           ),
           if (_expanded)
@@ -68,7 +67,7 @@ class _OrderWidgetState extends State<OrderWidget> {
                   },
                 ).toList(),
               ),
-            )
+            ),
         ],
       ),
     );

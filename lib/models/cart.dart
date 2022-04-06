@@ -23,7 +23,7 @@ class Cart with ChangeNotifier {
     return total;
   }
 
-  void additem(Product product) {
+  void addItem(Product product) {
     if (_items.containsKey(product.id)) {
       _items.update(
         product.id,

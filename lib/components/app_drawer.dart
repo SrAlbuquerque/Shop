@@ -10,7 +10,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: const Text('Bem Vindo Usuário'),
+            title: const Text('Bem vindo Usuário!'),
             automaticallyImplyLeading: false,
           ),
           const Divider(),
@@ -25,7 +25,7 @@ class AppDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.payments_outlined),
+            leading: const Icon(Icons.payment),
             title: const Text('Pedidos'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(

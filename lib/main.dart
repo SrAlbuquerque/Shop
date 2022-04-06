@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop/models/cart.dart';
-import 'package:shop/models/order_list.dart';
-import 'package:shop/models/product_list.dart';
-import 'package:shop/screens/cart_screen.dart';
-import 'package:shop/screens/orders_screen.dart';
-import 'package:shop/screens/product_detail_screen.dart';
-import 'package:shop/screens/products_overview_screen.dart';
-import 'package:shop/utils/app_routes.dart';
+
+import 'models/cart.dart';
+import 'models/order_list.dart';
+import 'models/product_list.dart';
+import 'pages/cart_page.dart';
+import 'pages/orders_page.dart';
+import 'pages/product_detail_page.dart';
+import 'pages/products_overview_page.dart';
+import 'utils/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,12 +42,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        //home: const ProductsOverviewScreen(),
         routes: {
-          AppRoutes.HOME: (context) => const ProductsOverviewScreen(),
-          AppRoutes.PRODUCT_DETAIL: (context) => const ProductDetailScreen(),
-          AppRoutes.CART: (context) => const CartScreen(),
-          AppRoutes.ORDERS: (context) => const OrdersScreen(),
+          AppRoutes.HOME: (context) => const ProductsOverviewPage(),
+          AppRoutes.PRODUCT_DETAIL: (context) => const ProductDetailPage(),
+          AppRoutes.CART: (context) => const CartPage(),
+          AppRoutes.ORDERS: (context) => const OrdersPage(),
         },
       ),
     );

@@ -1,8 +1,6 @@
-//classe
 import 'package:flutter/material.dart';
 
 class Product with ChangeNotifier {
-  //variáveis
   final String id;
   final String name;
   final String description;
@@ -10,7 +8,6 @@ class Product with ChangeNotifier {
   final String imageUrl;
   bool isFavorite;
 
-  //construtor
   Product({
     required this.id,
     required this.name,
@@ -20,7 +17,6 @@ class Product with ChangeNotifier {
     this.isFavorite = false,
   });
 
-  //método para alternar o favorito
   void toggleFavorite() {
     isFavorite = !isFavorite;
     notifyListeners();

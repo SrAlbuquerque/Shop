@@ -6,18 +6,16 @@ import 'package:shop/models/cart_item.dart';
 class CartItemWidget extends StatelessWidget {
   final CartItem cartItem;
 
-  const CartItemWidget({
+  const CartItemWidget(
+    this.cartItem, {
     Key? key,
-    required this.cartItem,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final double total = cartItem.price * cartItem.quantity;
-
     return Dismissible(
       key: ValueKey(cartItem.id),
-      direction: DismissDirection.startToEnd,
+      direction: DismissDirection.endToStart,
       background: Container(
         color: Theme.of(context).errorColor,
         child: const Icon(
@@ -25,16 +23,18 @@ class CartItemWidget extends StatelessWidget {
           color: Colors.white,
           size: 40,
         ),
-        alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.only(left: 20),
+        alignment: Alignment.centerRight,
+        padding: const EdgeInsets.only(right: 20),
         margin: const EdgeInsets.symmetric(
           horizontal: 15,
           vertical: 4,
         ),
       ),
       onDismissed: (_) {
-        Provider.of<Cart>(context, listen: false)
-            .removeItem(cartItem.productId);
+        Provider.of<Cart>(
+          context,
+          listen: false,
+        ).removeItem(cartItem.productId);
       },
       child: Card(
         margin: const EdgeInsets.symmetric(
@@ -45,7 +45,6 @@ class CartItemWidget extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: ListTile(
             leading: CircleAvatar(
-              radius: 25,
               backgroundColor: Theme.of(context).colorScheme.primary,
               child: Padding(
                 padding: const EdgeInsets.all(5),
@@ -55,7 +54,7 @@ class CartItemWidget extends StatelessWidget {
               ),
             ),
             title: Text(cartItem.name),
-            subtitle: Text('Total: R\$ ${total.toStringAsFixed(2)}'),
+            subtitle: Text('Total: R\$ ${cartItem.price * cartItem.quantity}'),
             trailing: Text('${cartItem.quantity}x'),
           ),
         ),

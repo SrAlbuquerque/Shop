@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop/components/cart_item.dart';
 import 'package:shop/models/cart.dart';
 import 'package:shop/models/order_list.dart';
 
-import '../widgets/cart_item.dart';
-
-class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
+class CartPage extends StatelessWidget {
+  const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +29,12 @@ class CartScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    'Total:',
+                    'Total',
                     style: TextStyle(
                       fontSize: 20,
                     ),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   Chip(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     label: Text(
@@ -50,6 +47,12 @@ class CartScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   TextButton(
+                    child: const Text('COMPRAR'),
+                    style: TextButton.styleFrom(
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
                     onPressed: () {
                       Provider.of<OrderList>(
                         context,
@@ -58,16 +61,7 @@ class CartScreen extends StatelessWidget {
 
                       cart.clear();
                     },
-                    child: const Text(
-                      'Comprar',
-                      style: TextStyle(fontSize: 15),
-                    ),
-                    style: TextButton.styleFrom(
-                      textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -75,9 +69,7 @@ class CartScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemCount: items.length,
-              itemBuilder: (ctx, i) => CartItemWidget(
-                cartItem: items[i],
-              ),
+              itemBuilder: (ctx, i) => CartItemWidget(items[i]),
             ),
           )
         ],
