@@ -23,13 +23,16 @@ class AuthPage extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  margin: const EdgeInsets.only(
+                    bottom: 20,
+                  ),
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 70,
@@ -54,7 +57,7 @@ class AuthPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                AuthForm(),
+                const AuthForm(),
               ],
             ),
           )
