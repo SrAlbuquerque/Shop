@@ -48,11 +48,11 @@ class AuthPage extends StatelessWidget {
                           offset: Offset(0, 2),
                         ),
                       ]),
-                  child: Text(
+                  child: const Text(
                     'Minha Loja',
                     style: TextStyle(
                       fontSize: 45,
-                      color: Theme.of(context).textTheme.headline6?.color,
+                      color: Colors.white,
                       fontFamily: 'Anton',
                     ),
                   ),
